@@ -36,7 +36,7 @@ class SextansApiController extends AbstractController
      */
     public function ShowAllUsersAction(Request $request)
     {
-        header("Access-Control-Allow-Origin: *");
+     //   header("Access-Control-Allow-Origin: *");
         $em = $this->getDoctrine()->getManager();
          $query = $em->createQuery('SELECT m 
                   FROM App:Contacts m
@@ -53,7 +53,7 @@ class SextansApiController extends AbstractController
                 "username" => $obj->getUsername(),
                 "email" => $obj->getEmail(),
                 "phone" => $obj->getPhone(),
-                 "filename" => $baseurl .'/sextan_api/public/uploads/brochures/'. $obj->getFilename(),
+                 "filename" => $baseurl .'/sextan_api_v2/public/uploads/brochures/'. $obj->getFilename(),
                     
             );
             
@@ -71,7 +71,7 @@ class SextansApiController extends AbstractController
      */
     public function saveSingleUserAction(Request $request)
     {
-        header("Access-Control-Allow-Origin: *");
+       // header("Access-Control-Allow-Origin: *");
         $em = $this->getDoctrine()->getManager();
         
       //  $data = json_decode($request->getContent(), true);
